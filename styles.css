@@ -1,0 +1,82 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+* body {
+  width: 100%;
+  height: 100vh;
+  font-family: "roboto";
+  background-color: black;
+  color: white;
+  display: grid;
+  place-items: center;
+}
+* body input[type=checkbox] {
+  display: none;
+}
+
+.lines {
+  cursor: pointer;
+  z-index: 1;
+}
+.lines [class^=line-] {
+  width: 100px;
+  height: 10px;
+  background-color: #fff;
+  margin: 10px;
+  border-radius: 25%;
+  transition: all ease-in-out 1s;
+}
+
+#menu-active:checked ~ label .line-1 {
+  transform: translateY(20px) rotate(45deg);
+}
+#menu-active:checked ~ label .line-2 {
+  transform: scale(0);
+}
+#menu-active:checked ~ label .line-3 {
+  transform: translateY(-20px) rotate(-45deg);
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+}
+.menu label {
+  display: flex;
+  flex-direction: row;
+  align-items: nlll;
+}
+.menu .items {
+  z-index: -1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  transition: all ease-in-out 1s;
+  color: gold;
+}
+
+.first {
+  transform: translateX(100px);
+  opacity: 0;
+}
+
+.last {
+  transform: translateX(-100px);
+  opacity: 0;
+}
+
+#menu-active:checked ~ .first {
+  transform: translateX(0px);
+  opacity: 1;
+}
+#menu-active:checked ~ .last {
+  transform: translateX(0px);
+  opacity: 1;
+}/*# sourceMappingURL=styles.css.map */
